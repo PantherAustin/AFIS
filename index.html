@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFIS Fingerprint Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen">
+        <h1>AFIS Fingerprint Database</h1>
+        <p>Restricted Access: Authorized Personnel Only</p>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginError" class="error"></p>
+    </div>
+
+    <!-- Fingerprint Upload Screen -->
+    <div id="uploadScreen" class="screen hidden">
+        <h1>Upload Fingerprint</h1>
+        <p>Analyze and search for matches</p>
+        <form id="uploadForm">
+            <input type="file" id="fingerprintFile" required>
+            <button type="submit">Analyze</button>
+        </form>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <!-- Searching Screen -->
+    <div id="searchingScreen" class="screen hidden">
+        <h1>Analyzing Fingerprint...</h1>
+        <p>Please wait while we search for a match.</p>
+        <div class="loading"></div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="resultScreen" class="screen hidden">
+        <h1>Match Found</h1>
+        <img id="personThumbnail" src="" alt="Fingerprint Thumbnail" style="width: 100px; height: 100px; border: 1px solid #555; margin-bottom: 15px;">
+        <p><strong>Name:</strong> <span id="personName"></span></p>
+        <p><strong>Charges:</strong> <span id="personCharges"></span></p>
+        <p><strong>Warrant:</strong> <span id="personWarrant"></span></p>
+        <p><strong>Date of Birth:</strong> <span id="personDOB"></span></p>
+        <p><strong>Case Number:</strong> <span id="personCaseNumber"></span></p>
+        <p><strong>Booking ID:</strong> <span id="personBookingID"></span></p>
+        <p><strong>Agency:</strong> <span id="personAgency"></span></p>
+        <p><a id="personRecordLink" href="#" target="_blank">View Full Record</a></p>
+        <button id="restartBtn">Search Another</button>
+        <button id="logoutFromResultBtn">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
